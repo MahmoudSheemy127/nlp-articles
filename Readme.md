@@ -6,3 +6,5 @@ run these commands in your terminal
 2. cd nlp-articles
 3. npm i 
 4. npm start
+
+Don't forget to add your .env file with your API_KEY
