@@ -13,7 +13,7 @@ async function handleSubmit(e){
         console.log(Article);        
         //api call to the server
         try{
-            const res = await fetch("http://localhost:8080/post-article",{
+            const res = await fetch("http://localhost:8082/post-article",{
                 method:'POST',
                 credentials: 'same-origin',
                 headers:{

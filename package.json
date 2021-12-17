@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "node server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack --config webpack.dev.js"
+    "build-dev": "webpack serve --config webpack.dev.js"
   },
   "author": "Mahmoud Hassan",
   "license": "MIT",

@@ -26,7 +26,7 @@ app.post('/post-article',async function(req,res){
     res.send(api.articleData);
 })
 
-app.listen(8080,function(){
-    console.log("Server is running at port 8080");
+app.listen(8082,function(){
+    console.log("Server is running at port 8082");
 })
 
