@@ -17,13 +17,8 @@ app.get('/',function(req,res){
     res.sendFile('dist/index.html');
 })
 
-app.get('/analyze', function(req,res){
-    api.nlpCall();
-    
-})
-app.get('/get-analysis',function(req,res){
-    res.send(api.articleData);    
-})
+
+// post-article route for calling the api and sending the result back
 app.post('/post-article',async function(req,res){
     console.log(req.body);
     await api.nlpCall(req.body.Article);
