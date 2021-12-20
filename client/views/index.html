@@ -8,10 +8,20 @@
 <body>
     <div>
         <h1>Welcome to Articles Natural Language Processing</h1>
-        <form>
+        <form onsubmit="return Client.handleSubmit(event)">
             <h3>Enter Your Article</h3>
-            <textarea id="article" placeholder="Type What you Think of"></textarea>
-            <button id="submit">Analyze article</button>
+            <textarea id="article" placeholder="Insert Link here"></textarea>
+            <div class="radioButtons">
+                <div>
+                    <input type="radio" name="content" id="text"></input>
+                    <label for="text">Text</label>
+                </div>
+                <div>
+                    <input type="radio" name="content" id="link" checked></input>
+                    <label for="link" >Link</label>
+                </div>                                    
+            </div>
+            <button onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)"   id="submit">Analyze article</button>
             <span>See what your article sounds like ?</span>
         </form>
         <section>
@@ -21,6 +31,7 @@
         </div> -->
     </div>
     <script>
+        
                     if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
                 window.addEventListener('load', () => {

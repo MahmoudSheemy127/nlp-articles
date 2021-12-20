@@ -1,4 +1,11 @@
 export const updateDom = (analysis) => {
     const result = document.getElementById("result");
-    result.innerText = `Your article sounds ${Client.CheckPolarity(analysis.polarity)} , ${analysis.subjectivity.toLowerCase()} and ${analysis.irony.toLowerCase()}`
+    if(analysis.code != 0)
+    {
+        result.innerText = 'Unable to analyze content';
+    }
+    else
+    {
+        result.innerText = `Your article sounds ${Client.CheckPolarity(analysis.polarity)} , ${analysis.subjectivity.toLowerCase()} and ${analysis.irony.toLowerCase()}`
+    }
 }

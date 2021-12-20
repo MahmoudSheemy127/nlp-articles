@@ -12,7 +12,14 @@ async function nlpCall(data) {
   const formdata = new FormData();
 
     formdata.append("key", `${process.env.API_KEY}`);
-    formdata.append("txt", data);
+    if(data.content == "text")
+    {
+      formdata.append("txt", data.Article);
+    }
+    else
+    {
+      formdata.append("url", data.Article);
+    }
     formdata.append("lang", "en");
 
     const requestOptions = {
@@ -25,11 +32,11 @@ async function nlpCall(data) {
       try{
       const response = await fetch("https://api.meaningcloud.com/sentiment-2.1",requestOptions);
       const data = await response.json();
-
+      console.log(data);
       articleData["irony"] = data.irony
       articleData["polarity"] = data.score_tag
       articleData["subjectivity"] = data.subjectivity;
-
+      articleData["code"] = data.status.code;
     }
     catch(err)
     {

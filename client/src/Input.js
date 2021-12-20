@@ -1,5 +1,5 @@
-const Btn = document.querySelector("#submit");
-Btn.addEventListener("click", handleSubmit)
+// const Btn = document.querySelector("#submit");
+// Btn.addEventListener("click", handleSubmit)
 
 async function handleSubmit(e){
     e.preventDefault();
@@ -7,19 +7,19 @@ async function handleSubmit(e){
     document.getElementById("result").innerText = "";
     //get input value
     const Article = document.querySelector("#article").value;
-
+    console.log("content is ",Client.content);
     if(Article != "")
     {
         console.log(Article);        
         //api call to the server
         try{
-            const res = await fetch("http://localhost:8082/post-article",{
+            const res = await fetch("http://localhost:8081/post-article",{
                 method:'POST',
                 credentials: 'same-origin',
                 headers:{
                     'Content-Type': 'application/json'
                     },
-                body: JSON.stringify({Article})
+                body: JSON.stringify({Article, content:Client.content})
                 })
             const data = await res.json();
             console.log(data);

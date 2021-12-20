@@ -26,12 +26,12 @@ app.get('/',function(req,res){
 // post-article route for calling the api and sending the result back
 app.post('/post-article',async function(req,res){
     console.log(req.body);
-    await api.nlpCall(req.body.Article);
+    await api.nlpCall(req.body);
     console.log("data from func ",api.articleData);
     res.send(api.articleData);
 })
 
-app.listen(8082,function(){
-    console.log("Server is running at port 8082");
+app.listen(8081,function(){
+    console.log("Server is running at port 8081");
 })
 

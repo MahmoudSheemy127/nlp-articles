@@ -1,4 +1,5 @@
 $border-radius: 20px;
+$regular-font: 20px;
 
 body{
     background-color: tan;
@@ -24,7 +25,7 @@ div{
         textarea{
             width:800px;
             height: 400px;
-            font-size: 20px;
+            font-size: $regular-font;
             margin-bottom: 20px;
             resize:none;
             border-radius: $border-radius;
@@ -40,6 +41,12 @@ div{
                 background-color:mediumblue;
                 color: white;
             }
+        }
+        .radioButtons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            font-size: $regular-font;
         }
         
     }
